@@ -10,35 +10,30 @@ function createCalculator() {
     return createCalculator();
   } 
 
-  function calcSum(a, b, c) {
-    let operators = {
-      '+': a + c,
-      '-': a - c,
-      '*': a * c,
-      '/': a / c,
-      '**': a ** c,
-    }
+  let operators = {
+    '+': a + c,
+    '-': a - c,
+    '*': a * c,
+    '/': a / c,
+    '**': a ** c,
+  }
      
-    let sum = operators[b];
+  let sum = operators[b];
     
-    if(sum === undefined) {
+  if (sum === undefined) {
       alert('Вы ввели не оператор !!!');
       return createCalculator();
-    } else {
-      alert(sum);
-    }
-                
-    let repeatMessage = confirm("Вы хотите ещё что-то посчитать?");
-
-    if (repeatMessage == true) {
-	    return createCalculator();
-    } else if (repeatMessage == false) {
-      return alert("Спасибо что пользуетесь нашим калькулятором !!!")
-    }
+  } else {
+    alert(sum);
   }
+                
+  let repeatMessage = confirm("Вы хотите ещё что-то посчитать?");
 
-  return calcSum(a, b, c);
+  if (repeatMessage == true) {
+    return createCalculator();
+  } else if (repeatMessage == false) {
+    return alert("Спасибо что пользуетесь нашим калькулятором !!!")
+  }
 }
 
 createCalculator();
-
